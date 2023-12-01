@@ -12,8 +12,12 @@ class ListExamples {
     List<String> result = new ArrayList<>();
     for(int i=0; i<list.size(); i++){
       if(sc.checkString(list.get(i))){
+       //used to identify the bug
         System.out.println("Added " + list.get(i) + " at index" + i);
-        result.add(i,list.get(i));
+
+        //this line is the faulty code, should be result.add(list.get(i)); 
+        result.add(i,list.get(i)); 
+        
       }
     }
     return result;
